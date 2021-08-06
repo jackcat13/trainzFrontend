@@ -1,0 +1,28 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+
+<app-user-details></app-user-details>
+
+<div class="largeWrapper" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
+    <div id="trainingsForm" class="normalBox">
+        <h2>My trainings</h2>
+        <div class="trainings">
+            <table>
+                <tr *ngFor="let training of trainings" [class.selected]="training === selectedTraining" tabindex="0">
+                    <td (click)="onSelect(training)">{{training.title}}:</td>
+                    <td><button class="button" (click)="deleteTraining(training)">Delete</button></td>
+                </tr>
+            </table>
+            <div id="createTrainingForm">
+                <div class="createTrainingEntry">
+                    <label for="trainingTitle">Id: </label>
+                    <input id="trainingTitle" type="text" [formControl]="trainingTitle">
+                </div>
+                <div class="createTrainingEntry">
+                    <label for="trainingDate">Id: </label>
+                    <input id="trainingDate" type="datetime-local" [formControl]="trainingDate">
+                </div>
+                <button class="button" (click)="createTraining()">Create training</button>
+            </div>
+        </div>
+    </div>
+</div>

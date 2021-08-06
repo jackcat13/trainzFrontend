@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*
+    Fonts definition
+*/
+
+@font-face {
+    font-family: "nexa_lightregular";
+    src: url("./fonts/nexa_light-webfont.woff") format("woff"), url("./fonts/nexa_light-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #272525;
+    font-family: "nexa_lightregular";
+    font-size: 16px;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid rgba(82, 73, 73, 0.856);
+}
+
+.largeWrapper {
+    width: 100%;
+}
+
+.button {
+    border: none;
+    background-color: rgba(255, 0, 0, 0.74);
+    width: 80px;
+    height: 40px;
+    border-radius: 10px 0 10px 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.button:hover{
+    background-color: rgba(224, 33, 33, 0.74);
+}
+
+.button:active{
+    border: solid 1px black;
+}
+
+.normalBox {
+    background-color: rgba(224, 153, 0, 0.836);
+    padding: 20px;
+    border-radius: 20px 0 20px 0;
+}
+
+tr{
+    transition: all 0.25s ease-in-out;
+}
+
+tr:hover{
+    color: #2e2e2e;
+}
+
+tr:focus{
+    color: white;
+}

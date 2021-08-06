@@ -1,0 +1,18 @@
+#trainingsForm {
+    margin: auto;
+    margin-top: 10%;
+    width: 50%;
+    min-height: 200px;
+}
+
+.trainings table {
+    padding: 10px;
+}
+
+.trainings table td {
+    padding: 10px;
+}
+
+.createTrainingEntry {
+    margin-bottom: 10px;
+}

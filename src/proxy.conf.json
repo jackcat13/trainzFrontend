@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "https://trainz-backend.herokuapp.com",
+        "pathRewrite": {"^/api" : ""},
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

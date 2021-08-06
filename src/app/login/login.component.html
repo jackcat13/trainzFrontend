@@ -1,0 +1,14 @@
+<div class="largeWrapper">
+    <div id="loginForm" class="normalBox" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
+        <div class="loginEntry">
+            <h1>Login</h1>
+        </div>
+        <div class="loginEntry">
+            <a [attr.href]="discordAuthorizationApi">
+                <div class="discordButton"></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<app-spinner *ngIf="isLoading"></app-spinner>
