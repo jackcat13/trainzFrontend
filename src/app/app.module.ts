@@ -10,6 +10,11 @@ import { DiscordLoginService } from './service/login.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +22,18 @@ import { ReactiveFormsModule } from '@angular/forms';
     TrainingListComponent,
     LoginComponent,
     UserDetailsComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ExerciseEntryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatAutocompleteModule
   ],
   providers: [DiscordLoginService],
   bootstrap: [AppComponent]

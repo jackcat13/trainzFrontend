@@ -4,7 +4,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 
 import { Training } from "../model/Training";
-import { User } from "../model/User";
 import { delay, mergeMap, retryWhen } from "rxjs/operators";
 
 @Injectable()
@@ -35,10 +34,7 @@ export class TrainingService {
         )
     }
 
-    createTraining(trainingTitle: string, trainingDate: Date): Observable<Training> {
-        let userId = this.getUserIdLogged()
-        let user: User = { id: userId, username: "", discriminator: 0, avatar: "", locale: "" };
-        let training: Training = { title: trainingTitle, date: trainingDate, user: user }
+    createTraining(training: Training): Observable<Training> {
         return this.http.post<Training>(this.trainingUrl, training);
     }
 

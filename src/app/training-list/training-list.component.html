@@ -12,14 +12,34 @@
                     <td><button class="button" (click)="deleteTraining(training)">Delete</button></td>
                 </tr>
             </table>
+            <h2>Training creation</h2>
             <div id="createTrainingForm">
                 <div class="createTrainingEntry">
-                    <label for="trainingTitle">Id: </label>
-                    <input id="trainingTitle" type="text" [formControl]="trainingTitle">
+                    <mat-form-field><input id="trainingTitle" placeholder="Training title" aria-label="Training title" matInput type="text" [formControl]="trainingTitle" required></mat-form-field>
                 </div>
                 <div class="createTrainingEntry">
-                    <label for="trainingDate">Id: </label>
-                    <input id="trainingDate" type="datetime-local" [formControl]="trainingDate">
+                    <mat-form-field><input id="trainingDate" placeholder="Training date" aria-label="Training date" type="datetime-local" matInput [formControl]="trainingDate" required></mat-form-field>
+                </div>
+                <div class="createTrainingEntry">
+                    <mat-form-field>
+                        <input id="programType" placeholder="Program Type" aria-label="Program Type" matInput [formControl]="programType" [matAutocomplete]="typeAuto" required>
+                    </mat-form-field>
+                    <mat-autocomplete #typeAuto="matAutocomplete">
+                        <mat-option *ngFor="let type of filteredProgramTypesValues | async" [value]="type">{{type}}</mat-option>
+                    </mat-autocomplete>
+                </div>
+                <div class="createTrainingEntry">
+                    <mat-form-field>
+                        <input id="programRepetitions" type="number" placeholder="Program repetitions" aria-label="Program repetitions" matInput [formControl]="programRepetitions" required>
+                    </mat-form-field>
+                </div>
+                <div class="createTrainingEntry">
+                    <mat-form-field>
+                        <input id="exercisesNumber" type="number" placeholder="Exercises number" aria-label="Exercises number" matInput [formControl]="exercisesNumber" required>
+                    </mat-form-field>
+                </div>
+                <div class="createTrainingEntry" *ngFor="let index of observedExercisesNumber | async; let i=index">
+                    <app-exercise-entry  [entryId]="i+1" #exercise></app-exercise-entry>
                 </div>
                 <button class="button" (click)="createTraining()">Create training</button>
             </div>

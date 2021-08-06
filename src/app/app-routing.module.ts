@@ -3,6 +3,7 @@ import { CanActivate, Router, RouterModule, Routes } from '@angular/router';
 import { TrainingListComponent } from './training-list/training-list.component';
 import { LoginComponent } from './login/login.component';
 import { DiscordLoginService } from './service/login.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ class AccessGuard implements CanActivate {
   constructor( private loginService: DiscordLoginService, private router: Router ){}
 
   canActivate() {
-    if (this.loginService.isLogged()){
+    if (this.loginService.isLogged() || !environment.production){
       return true;
     }
     else{

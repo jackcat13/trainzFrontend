@@ -1,0 +1,48 @@
+
+<div class="createExerciseForm">
+    <h3>Exercise {{entryId}}</h3>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <input class="exerciseTitle" placeholder="Exercise title" aria-label="Exercise title" matInput [formControl]="exerciseTitle" [matAutocomplete]="titleAuto" required>
+        </mat-form-field>
+        <mat-autocomplete #titleAuto="matAutocomplete">
+            <mat-option *ngFor="let title of filteredexerciceTitleValues | async" [value]="title">{{title}}</mat-option>
+        </mat-autocomplete>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <input class="exerciseVariation" placeholder="Exercise variation" aria-label="Exercise Variation" matInput [formControl]="exerciseVariation" [matAutocomplete]="variationAuto">
+        </mat-form-field>
+        <mat-autocomplete #variationAuto="matAutocomplete">
+            <mat-option *ngFor="let variation of filteredexerciceVariationValues | async" [value]="variation">{{variation}}</mat-option>
+        </mat-autocomplete>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <input class="exerciseRepetition" type="number" placeholder="Exercise repetition" aria-label="Exercise repetition" matInput [formControl]="exerciseRepetition" required>
+        </mat-form-field>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <input class="exerciseRestTime" type="number" placeholder="Exercise rest time in seconds" aria-label="Exercise rest time in seconds" matInput [formControl]="exerciseRestTime" required>
+        </mat-form-field>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <textarea cdkTextareaAutosize class="exerciseAdditionalInformation" placeholder="Exercise additional information" aria-label="Exercise additional information" matInput [formControl]="exerciseAdditionalInformation"></textarea>
+        </mat-form-field>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <input class="exerciseResultConfidence" placeholder="Exercise result confidence" aria-label="Exercise result confidence" matInput [formControl]="exerciseResultConfidence" [matAutocomplete]="confidenceAuto" required>
+        </mat-form-field>
+        <mat-autocomplete #confidenceAuto="matAutocomplete">
+            <mat-option *ngFor="let confidence of filteredexerciceResultConfidenceValues | async" [value]="confidence">{{confidence}}</mat-option>
+        </mat-autocomplete>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
+            <textarea cdkTextareaAutosize class="exerciseResultComments" placeholder="Exercise result comments" aria-label="Exercise result comments" matInput [formControl]="exerciseResultComments"></textarea>
+        </mat-form-field>
+    </div>
+</div>
