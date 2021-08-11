@@ -30,6 +30,8 @@ export class TrainingListComponent implements OnInit {
 
   trainings: Training[] = [];
   selectedTraining!: Training;
+  selectedProgram!: Program;
+  selectedExercises!: Exercise[];
 
   trainingTitle = new FormControl('');
   trainingDate = new FormControl('');
@@ -70,6 +72,8 @@ export class TrainingListComponent implements OnInit {
 
   onSelect(training: Training): void {
     this.selectedTraining = Object.assign({}, training);
+    this.selectedProgram = Object.assign({}, this.selectedTraining.program);
+    this.selectedExercises = this.selectedProgram.exercises.map(ex => Object.assign({}, ex));
   }
 
   createTraining(): void {
