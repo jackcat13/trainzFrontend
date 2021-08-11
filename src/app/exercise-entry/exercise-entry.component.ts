@@ -17,6 +17,7 @@ export class ExerciseEntryComponent implements OnInit {
   exerciseTitle = new FormControl('')
   exerciseVariation = new FormControl('')
   exerciseRepetition = new FormControl('')
+  exerciseMass = new FormControl('');
   exerciseRestTime = new FormControl('')
   exerciseAdditionalInformation = new FormControl('');
   exerciseResultConfidence = new FormControl('');
@@ -57,8 +58,9 @@ export class ExerciseEntryComponent implements OnInit {
   }
 
   getExercise(): Exercise{
-    return {title: this.exerciseTitle.value, 
-      variation: this.exerciseVariation.value, 
+    return {title: this.exerciseTitle.value,
+      variation: this.exerciseVariation.value,
+      mass: this.exerciseMass.value,
       restTime: this.exerciseRestTime.value,
       repetitions: this.exerciseRepetition.value,
       additionalInformation: this.exerciseAdditionalInformation.value,

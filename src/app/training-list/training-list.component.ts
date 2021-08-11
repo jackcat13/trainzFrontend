@@ -95,7 +95,3 @@ export class TrainingListComponent implements OnInit {
     this.trainings.splice(removeIndex, 1);
   }
 }
-function getUserIdLogged(): import("../model/User").User {
-  throw new Error('Function not implemented.');
-}
-

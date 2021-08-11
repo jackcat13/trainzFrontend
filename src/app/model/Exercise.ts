@@ -6,6 +6,7 @@ export interface Exercise{
     title: ExerciseTitle;
     variation: ExerciseVariation;
     repetitions: number;
+    mass: number;
     restTime: number;
     additionalInformation: string;
     resultConfidence: ExerciseResultCondifence;

@@ -24,6 +24,11 @@
     </div>
     <div class="createExeciseEntry">
         <mat-form-field>
+            <input class="exerciseMass" type="number" placeholder="Exercise mass in kgs" aria-label="Exercise mass in kgs" matInput [formControl]="exerciseMass" required>
+        </mat-form-field>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
             <input class="exerciseRestTime" type="number" placeholder="Exercise rest time in seconds" aria-label="Exercise rest time in seconds" matInput [formControl]="exerciseRestTime" required>
         </mat-form-field>
     </div>
