@@ -19,6 +19,11 @@
     </div>
     <div class="createExeciseEntry">
         <mat-form-field>
+            <input class="exerciseSeries" type="number" placeholder="Exercise series" aria-label="Exercise series" matInput [formControl]="exerciseSeries" required>
+        </mat-form-field>
+    </div>
+    <div class="createExeciseEntry">
+        <mat-form-field>
             <input class="exerciseRepetition" type="number" placeholder="Exercise repetition" aria-label="Exercise repetition" matInput [formControl]="exerciseRepetition" required>
         </mat-form-field>
     </div>

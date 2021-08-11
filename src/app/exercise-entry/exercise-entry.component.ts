@@ -14,11 +14,12 @@ import { ExerciseVariation } from '../model/ExerciseVariation';
 })
 export class ExerciseEntryComponent implements OnInit {
 
-  exerciseTitle = new FormControl('')
-  exerciseVariation = new FormControl('')
-  exerciseRepetition = new FormControl('')
+  exerciseTitle = new FormControl('');
+  exerciseVariation = new FormControl('');
+  exerciseSeries = new FormControl('');
+  exerciseRepetition = new FormControl('');
   exerciseMass = new FormControl('');
-  exerciseRestTime = new FormControl('')
+  exerciseRestTime = new FormControl('');
   exerciseAdditionalInformation = new FormControl('');
   exerciseResultConfidence = new FormControl('');
   exerciseResultComments = new FormControl('');
@@ -62,6 +63,7 @@ export class ExerciseEntryComponent implements OnInit {
       variation: this.exerciseVariation.value,
       mass: this.exerciseMass.value,
       restTime: this.exerciseRestTime.value,
+      series: this.exerciseSeries.value,
       repetitions: this.exerciseRepetition.value,
       additionalInformation: this.exerciseAdditionalInformation.value,
       resultConfidence: this.exerciseResultConfidence.value,
