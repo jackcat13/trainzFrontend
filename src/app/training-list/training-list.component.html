@@ -9,6 +9,7 @@
             <table>
                 <tr *ngFor="let training of trainings" [class.selected]="training === selectedTraining" tabindex="0">
                     <td (click)="onSelect(training)">{{training.title}}:</td>
+                    <td (click)="onSelect(training)">{{training.date}}:</td>
                     <td><button class="button" (click)="deleteTraining(training)">Delete</button></td>
                 </tr>
             </table>
