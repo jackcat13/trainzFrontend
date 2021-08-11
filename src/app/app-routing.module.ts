@@ -13,7 +13,7 @@ class AccessGuard implements CanActivate {
   constructor( private loginService: DiscordLoginService, private router: Router ){}
 
   canActivate() {
-    if (this.loginService.isLogged() || !environment.production){
+    if (this.loginService.isLogged()){
       return true;
     }
     else{

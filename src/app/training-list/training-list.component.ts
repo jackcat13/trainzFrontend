@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChildren } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { ExerciseEntryComponent } from '../exercise-entry/exercise-entry.component';
 import { Exercise } from '../model/Exercise';
 import { Program } from '../model/Program';
@@ -76,7 +78,10 @@ export class TrainingListComponent implements OnInit {
     this.exerciseEntry.map(entry => program.exercises.push(entry.getExercise()))
     let training: Training = {title: this.trainingTitle.value, date: this.trainingDate.value, user: user, program: program}
     this.service.createTraining(training).subscribe(
-      training => this.trainings.push(training),
+      training => {
+        this.trainings.push(training);
+        location.reload();
+      },
       err => console.error(err),
       () => console.log("get all trainings service completed")
     );
