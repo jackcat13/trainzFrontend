@@ -1,26 +1,15 @@
 @media screen and (max-width: 650px) {
-    #trainingsForm{
-        margin-left: 30px;
-    }
+
 }
 
 @media screen and (min-width: 650px) {
-    #trainingsForm{
-        margin: auto;
-    }
+
 }
 
 @media screen and (max-width: 930px) {
-    #trainingsForm {
-        width: 30%;
-    }
 }
 
 @media screen and (min-width: 930px) {
-    #trainingsForm {
-        width: 50%;
-    }
-
     .createTrainingEntry, .trainingDetailsEntry {
         margin-left: 20px;
     }
@@ -34,10 +23,31 @@
     }
 }
 
+#refresh{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
 #trainingsForm {
-    margin-top: 10%;
     min-height: 200px;
+    display: flex;
+}
+
+.trainingBlock{
+    width: 50%;
     padding: 60px;
+    padding-top: 150px;
+}
+
+.trainingBlock:nth-child(even){
+    background-image: url(./parc.jpg);
+    background-size: contain;
+}
+
+.trainingBlock:nth-child(odd){
+    background-color: black;
+    color: rgb(255, 166, 0);
 }
 
 .createTrainingEntry, .trainingDetailsEntry {

@@ -27,7 +27,7 @@ export class TrainingListComponent implements OnInit {
   filteredProgramTypesValues = of(this.programTypesValues)
 
   trainings: Training[] = [];
-  selectedTraining!: Training;
+  selectedTraining?: Training;
   selectedProgram!: Program;
   selectedExercises!: Exercise[];
 
@@ -53,6 +53,7 @@ export class TrainingListComponent implements OnInit {
       () => {
         console.log("get all trainings service completed")
         this.isLoading = false;
+        this.trainings.sort((a,b) => a.date < b.date ? -1 : 1)
       }
     );
     this.filteredProgramTypesValues = this.programType.valueChanges
@@ -74,10 +75,14 @@ export class TrainingListComponent implements OnInit {
     this.selectedExercises = this.selectedProgram.exercises.map(ex => Object.assign({}, ex)).sort((a, b) => a.order < b.order ? -1 : 1);
   }
 
+  refreshView(): void{
+    this.selectedTraining = undefined;
+  }
+
   createTraining(): void {
     let user: User = {id: this.userService.getUserIdLogged(), username: "", avatar: "", discriminator: 0, locale: ""};
     let program: Program = {type: this.programType.value, repetition: this.programRepetitions.value, exercises: []};
-    this.exerciseEntry.map(entry => program.exercises.push(entry.getExercise()));gt
+    this.exerciseEntry.map(entry => program.exercises.push(entry.getExercise()));
     let training: Training = {title: this.trainingTitle.value, date: this.trainingDate.value, user: user, program: program};
     this.service.createTraining(training).subscribe(
       training => {
@@ -98,7 +103,7 @@ export class TrainingListComponent implements OnInit {
   }
 
   private removeTrainingFromList(trainingId: string): void {
-    const removeIndex = this.trainings.findIndex(item => item.title === trainingId);
+    const removeIndex = this.trainings.findIndex(item => item._id === trainingId);
     this.trainings.splice(removeIndex, 1);
   }
 }

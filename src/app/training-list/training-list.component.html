@@ -1,20 +1,25 @@
 <app-spinner *ngIf="isLoading"></app-spinner>
 
 <app-user-details></app-user-details>
+<app-refresh-button (click)="refreshView()" id="refresh"></app-refresh-button>
 
 <div class="largeWrapper" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
-    <div id="trainingsForm" class="normalBox">
-        <h2>My trainings</h2>
-        <div class="trainings">
-            <table>
-                <tr *ngFor="let training of trainings" [class.selected]="training === selectedTraining" tabindex="0">
-                    <td (click)="onSelect(training)">{{training.title}}:</td>
-                    <td (click)="onSelect(training)">{{training.date}}:</td>
-                    <td><button class="button desktop" (click)="deleteTraining(training)">Delete</button></td>
-                </tr>
-            </table>
+    <div id="trainingsForm">
+        <div class="trainingBlock">
+            <h1>My trainings</h1>
+            <div id="trainingsListTable">
+                <table>
+                    <tr *ngFor="let training of trainings" [class.selected]="training === selectedTraining" tabindex="0">
+                        <td (click)="onSelect(training)">{{training.title}}:</td>
+                        <td (click)="onSelect(training)">{{training.date}}:</td>
+                        <td><button class="button desktop" (click)="deleteTraining(training)">Delete</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="trainingBlock">
             <div *ngIf="!selectedTraining" id="createTrainingForm">
-                <h2>Training creation</h2>
+                <h1>Training creation</h1>
                 <div class="createTrainingEntry">
                     <mat-form-field><input id="trainingTitle" placeholder="Training title" aria-label="Training title" matInput type="text" [formControl]="trainingTitle" required></mat-form-field>
                 </div>
@@ -45,7 +50,7 @@
                 <button class="button" (click)="createTraining()">Create training</button>
             </div>
             <div *ngIf="selectedTraining" id="trainingDetails">
-                <h2>Training details</h2>
+                <h1>Training details</h1>
                 <div>
                     <div class="trainingDetailsEntry"><span class="title">Title :</span> {{selectedTraining.title}}</div>
                     <div class="trainingDetailsEntry"><span class="title">Date :</span> {{selectedTraining.date}}</div>

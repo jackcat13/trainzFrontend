@@ -1,4 +1,4 @@
-import { Injectable, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.component';
+import { RefreshButtonComponent } from './refresh-button/refresh-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.componen
     LoginComponent,
     UserDetailsComponent,
     SpinnerComponent,
-    ExerciseEntryComponent
+    ExerciseEntryComponent,
+    RefreshButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.componen
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    BrowserAnimationsModule
   ],
   providers: [DiscordLoginService],
   bootstrap: [AppComponent]

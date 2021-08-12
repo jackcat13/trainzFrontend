@@ -39,8 +39,6 @@ export class TrainingService {
     }
 
     deleteTraining(trainingToDelete: Training): Observable<any> {
-        let userId = this.getUserIdLogged()
-
         return this.http.delete<any>(this.trainingUrl + "/" + trainingToDelete._id);
     }
 
