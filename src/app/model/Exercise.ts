@@ -12,4 +12,5 @@ export interface Exercise{
     additionalInformation: string;
     resultConfidence: ExerciseResultCondifence;
     resultComments: string;
+    order: number;
 }

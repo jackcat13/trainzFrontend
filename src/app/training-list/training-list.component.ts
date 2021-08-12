@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChildren } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 import { ExerciseEntryComponent } from '../exercise-entry/exercise-entry.component';
 import { Exercise } from '../model/Exercise';
 import { Program } from '../model/Program';
@@ -73,14 +71,14 @@ export class TrainingListComponent implements OnInit {
   onSelect(training: Training): void {
     this.selectedTraining = Object.assign({}, training);
     this.selectedProgram = Object.assign({}, this.selectedTraining.program);
-    this.selectedExercises = this.selectedProgram.exercises.map(ex => Object.assign({}, ex));
+    this.selectedExercises = this.selectedProgram.exercises.map(ex => Object.assign({}, ex)).sort((a, b) => a.order < b.order ? -1 : 1);
   }
 
   createTraining(): void {
-    let user: User = {id: this.userService.getUserIdLogged(), username: "", avatar: "", discriminator: 0, locale: ""}
-    let program: Program = {type: this.programType.value, repetition: this.programRepetitions.value, exercises: []}
-    this.exerciseEntry.map(entry => program.exercises.push(entry.getExercise()))
-    let training: Training = {title: this.trainingTitle.value, date: this.trainingDate.value, user: user, program: program}
+    let user: User = {id: this.userService.getUserIdLogged(), username: "", avatar: "", discriminator: 0, locale: ""};
+    let program: Program = {type: this.programType.value, repetition: this.programRepetitions.value, exercises: []};
+    this.exerciseEntry.map(entry => program.exercises.push(entry.getExercise()));gt
+    let training: Training = {title: this.trainingTitle.value, date: this.trainingDate.value, user: user, program: program};
     this.service.createTraining(training).subscribe(
       training => {
         this.trainings.push(training);
@@ -104,3 +102,4 @@ export class TrainingListComponent implements OnInit {
     this.trainings.splice(removeIndex, 1);
   }
 }
+

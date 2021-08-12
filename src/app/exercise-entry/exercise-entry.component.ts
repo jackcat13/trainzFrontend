@@ -67,7 +67,8 @@ export class ExerciseEntryComponent implements OnInit {
       repetitions: this.exerciseRepetition.value,
       additionalInformation: this.exerciseAdditionalInformation.value,
       resultConfidence: this.exerciseResultConfidence.value,
-      resultComments: this.exerciseResultComments.value
+      resultComments: this.exerciseResultComments.value,
+      order: this.entryId
     }
   }
 
