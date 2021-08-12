@@ -16,6 +16,38 @@ body {
     background-color: #272525;
     font-family: "nexa_lightregular" !important;
     font-size: 16px;
+    text-align: justify;
+}
+
+table{
+    text-align: left;
+    width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+    .desktop{
+        display: none;
+    }
+
+    .mat-form-field-infix{
+        width: 100px !important;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 930px) {
+    .desktop{
+        display: none;
+    }
+
+    .mat-form-field-infix{
+        width: 200px !important;
+    }
+}
+
+@media screen and (min-width: 930px) {
+    .mat-form-field-infix{
+        width: 300px !important;
+    }
 }
 
 input {
@@ -23,10 +55,6 @@ input {
     outline: 0;
     background: transparent;
     border-bottom: 2px solid rgba(82, 73, 73, 0.856);
-}
-
-.mat-form-field{
-    width: 300px !important;
 }
 
 .largeWrapper {
@@ -78,4 +106,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 h2, h3{
     margin-top: 20px !important;
+}
+
+.title{
+    font-weight: bold;
+    display: inline-block;
+    min-width: 160px;
 }

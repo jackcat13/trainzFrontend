@@ -1,20 +1,45 @@
+@media screen and (max-width: 650px) {
+    #trainingsForm{
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    #trainingsForm{
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    #trainingsForm {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 930px) {
+    #trainingsForm {
+        width: 50%;
+    }
+
+    .createTrainingEntry, .trainingDetailsEntry {
+        margin-left: 20px;
+    }
+
+    .trainings table {
+        padding: 10px;
+    }
+    
+    .trainings table td {
+        padding: 10px;
+    }
+}
+
 #trainingsForm {
-    margin: auto;
     margin-top: 10%;
-    width: 50%;
     min-height: 200px;
     padding: 60px;
 }
 
-.trainings table {
-    padding: 10px;
-}
-
-.trainings table td {
-    padding: 10px;
-}
-
 .createTrainingEntry, .trainingDetailsEntry {
     margin-bottom: 10px;
-    margin-left: 20px;
 }
