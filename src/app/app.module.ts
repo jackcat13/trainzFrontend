@@ -16,6 +16,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.component';
 import { RefreshButtonComponent } from './refresh-button/refresh-button.component';
+import { BorderedTitleComponent } from './bordered-title/bordered-title.component';
+import { AnimButtonComponent } from './anim-button/anim-button.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RefreshButtonComponent } from './refresh-button/refresh-button.componen
     UserDetailsComponent,
     SpinnerComponent,
     ExerciseEntryComponent,
-    RefreshButtonComponent
+    RefreshButtonComponent,
+    BorderedTitleComponent,
+    AnimButtonComponent
   ],
   imports: [
     BrowserModule,

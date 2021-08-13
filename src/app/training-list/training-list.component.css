@@ -41,15 +41,20 @@
 }
 
 .trainingBlock:nth-child(even){
-    background-image: url(./parc.jpg);
-    background-size: contain;
+    background: url(./parc.jpg);
+    background-size: 50%;
+    background-attachment: fixed;
 }
 
 .trainingBlock:nth-child(odd){
-    background-color: black;
+    background-color: #181818;
     color: rgb(255, 166, 0);
 }
 
 .createTrainingEntry, .trainingDetailsEntry {
     margin-bottom: 10px;
+}
+
+#trainingCreationTitle{
+    border-color: black;
 }

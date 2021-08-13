@@ -4,6 +4,6 @@
     </div>
     <div *ngIf="!collapse" id="userinfos">
         <div class="userentry"><span class="label">Name:</span>{{user.username}}</div>
-        <div class="userentry"><button class="button" id="logout" type="submit" (click)="deconnection()">Logout</button></div>
+        <div class="userentry"><app-anim-button [btnId]="7" title="Logout" (click)="deconnection()"></app-anim-button></div>
     </div>
 </div>

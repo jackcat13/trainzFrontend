@@ -6,20 +6,20 @@
 <div class="largeWrapper" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
     <div id="trainingsForm">
         <div class="trainingBlock">
-            <h1>My trainings</h1>
+            <app-bordered-title title="My trainings"></app-bordered-title>
             <div id="trainingsListTable">
                 <table>
                     <tr *ngFor="let training of trainings" [class.selected]="training === selectedTraining" tabindex="0">
                         <td (click)="onSelect(training)">{{training.title}}:</td>
                         <td (click)="onSelect(training)">{{training.date}}:</td>
-                        <td><button class="button desktop" (click)="deleteTraining(training)">Delete</button></td>
+                        <td><app-anim-button [btnId]="5" class="desktop" title="Delete" (click)="deleteTraining(training)"></app-anim-button></td>
                     </tr>
                 </table>
             </div>
         </div>
         <div class="trainingBlock">
             <div *ngIf="!selectedTraining" id="createTrainingForm">
-                <h1>Training creation</h1>
+                <app-bordered-title id="trainingCreationTitle" title="Creation"></app-bordered-title>
                 <div class="createTrainingEntry">
                     <mat-form-field><input id="trainingTitle" placeholder="Training title" aria-label="Training title" matInput type="text" [formControl]="trainingTitle" required></mat-form-field>
                 </div>
@@ -45,12 +45,12 @@
                     </mat-form-field>
                 </div>
                 <div class="createTrainingEntry" *ngFor="let index of observedExercisesNumber | async; let i=index">
-                    <app-exercise-entry  [entryId]="i+1" #exercise></app-exercise-entry>
+                    <app-exercise-entry [entryId]="i+1" #exercise></app-exercise-entry>
                 </div>
-                <button class="button" (click)="createTraining()">Create training</button>
+                <app-anim-button [btnId]="14" title="Create" (click)="createTraining()"></app-anim-button>
             </div>
             <div *ngIf="selectedTraining" id="trainingDetails">
-                <h1>Training details</h1>
+                <app-bordered-title id="trainingCreationTitle" title="Details"></app-bordered-title>
                 <div>
                     <div class="trainingDetailsEntry"><span class="title">Title :</span> {{selectedTraining.title}}</div>
                     <div class="trainingDetailsEntry"><span class="title">Date :</span> {{selectedTraining.date}}</div>
