@@ -55,6 +55,6 @@
     margin-bottom: 10px;
 }
 
-#trainingCreationTitle{
+#trainingCreationTitle.borderedTopRight, #trainingCreationTitle.borderedBotLeft{
     border-color: black;
 }
