@@ -40,6 +40,7 @@ export class TrainingListComponent implements OnInit {
   arrayExercisesNumber: number[] = []
   
   isLoading = false;
+  deleteConfirm?: number;
   exercises: Exercise[] = []
 
   constructor(private service: TrainingService, private userService: UserService) {
@@ -92,6 +93,14 @@ export class TrainingListComponent implements OnInit {
       err => console.error(err),
       () => console.log("get all trainings service completed")
     );
+  }
+
+  showConfirmation(i: number): void{
+    this.deleteConfirm = i;
+  }
+
+  hideConfirmation(i: number): void{
+    this.deleteConfirm = undefined;
   }
 
   deleteTraining(training: Training): void {
