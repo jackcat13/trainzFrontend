@@ -1,13 +1,13 @@
 #refreshButton{
-    min-height: 6vh;
-    min-width: 6vh;
-    margin-top: -3vh;
-    margin-left: -3vh;
-    border-radius: 3vh;
+    height: 48px;
+    width: 48px;
+    margin-top: -24px;
+    margin-left: -24px;
+    border-radius: 24px;
     border: solid 1px gray;
     transition: all 0.25s ease-in-out;
     background-image: url('./refresh.png');
-    background-size: 6vh;
+    background-size: 48px;
     background-repeat: no-repeat;
 }
 

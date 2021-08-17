@@ -56,15 +56,15 @@
             <div *ngIf="selectedTraining" id="trainingDetails">
                 <app-bordered-title id="trainingCreationTitle" title="Details"></app-bordered-title>
                 <div>
-                    <div class="trainingDetailsEntry"><span class="title">Title :</span> {{selectedTraining.title}}</div>
-                    <div class="trainingDetailsEntry"><span class="title">Date :</span> {{selectedTraining.date}}</div>
-                    <div class="trainingDetailsEntry"><span class="title">Program type :</span> {{selectedProgram.type}}</div>
+                    <div class="trainingDetailsEntry">{{selectedTraining.title}}</div>
+                    <div class="trainingDetailsEntry">{{selectedTraining.date}}</div>
+                    <div class="trainingDetailsEntry">{{selectedProgram.type}}</div>
                     <div class="trainingDetailsEntry"><span class="title">Program repetitions:</span> {{selectedProgram.repetition}}</div>
                     <div><h2>Exercises :</h2></div>
                     <div *ngFor="let exercise of selectedExercises; let i=index">
                         <h3>Exercise {{i+1}}</h3>
-                        <div class="trainingDetailsEntry"><span class="title">Title :</span> {{exercise.title}}</div>
-                        <div *ngIf="exercise.variation" class="trainingDetailsEntry"><span class="title">Exercise variation :</span> {{exercise.variation}}</div>
+                        <div class="trainingDetailsEntry">{{exercise.title}}</div>
+                        <div *ngIf="exercise.variation" class="trainingDetailsEntry"><span class="title">Variation :</span> {{exercise.variation}}</div>
                         <div class="trainingDetailsEntry"><span class="title">Series :</span> {{exercise.series}}</div>
                         <div class="trainingDetailsEntry"><span class="title">Repetitions :</span> {{exercise.repetitions}}</div>
                         <div class="trainingDetailsEntry"><span class="title">Mass :</span> {{exercise.mass}}</div>

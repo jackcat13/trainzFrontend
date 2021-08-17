@@ -1,3 +1,48 @@
+@media screen and (max-width: 430px) {
+    .trainingBlock{
+        width: 100%;
+        background-color: #dddddd;
+        color: rgb(0, 0, 0);
+    }
+
+    .trainingBlock:nth-child(odd){
+        height: 70%;
+    }
+
+    #refresh{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 430px) {
+
+    #trainingsForm {
+        min-height: 200px;
+        display: flex;
+    }
+
+    .trainingBlock{
+        width: 50%;
+        padding: 60px;
+        padding-top: 150px;
+    }
+
+    .trainingBlock:nth-child(even){
+        background-color: #dddddd;
+    }
+
+    .trainingBlock:nth-child(odd){
+        background-color: #181818;
+        color: rgb(255, 166, 0);
+    }
+
+    #refresh{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+}
+
 @media screen and (min-width: 930px) {
     .createTrainingEntry, .trainingDetailsEntry {
         margin-left: 20px;
@@ -12,32 +57,13 @@
     }
 }
 
-#refresh{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-}
-
-#trainingsForm {
-    min-height: 200px;
-    display: flex;
-}
-
 .trainingBlock{
-    width: 50%;
     padding: 60px;
     padding-top: 150px;
 }
 
-.trainingBlock:nth-child(even){
-    background: url(./parc.jpg);
-    background-size: 50%;
-    background-attachment: fixed;
-}
-
-.trainingBlock:nth-child(odd){
-    background-color: #181818;
-    color: rgb(255, 166, 0);
+#trainingsForm {
+    min-height: 200px;
 }
 
 .createTrainingEntry, .trainingDetailsEntry {
