@@ -6,7 +6,7 @@
 <div class="largeWrapper" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
     <div id="trainingsForm">
         <div class="trainingBlock">
-            <app-bordered-title title="My trainings"></app-bordered-title>
+            <app-bordered-title title="Trainings"></app-bordered-title>
             <div id="trainingsListTable">
                 <table>
                     <tr *ngFor="let training of trainings; let i=index" [class.selected]="training === selectedTraining" tabindex="0">

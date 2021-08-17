@@ -1,12 +1,13 @@
 #userDetails {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;
+    left: 20px;
     padding: 20px;
-    background-color: rgba(255, 183, 27, 0.753);
+    background-color: rgb(255, 183, 27);
     padding: 20px;
     border-radius: 20px 0 20px 0;
     transition: all 0.25s ease-in-out;
+    z-index: 10;
 }
 
 #userDetails.small{
