@@ -24,7 +24,6 @@
     .trainingBlock{
         width: 50%;
         padding: 60px;
-        padding-top: 150px;
     }
 
     .trainingBlock:nth-child(even){
@@ -59,7 +58,7 @@
 
 .trainingBlock{
     padding: 60px;
-    padding-top: 150px;
+    padding-top: 180px;
 }
 
 #trainingsForm {
@@ -72,4 +71,8 @@
 
 #trainingCreationTitle.borderedTopRight, #trainingCreationTitle.borderedBotLeft{
     border-color: black;
+}
+
+table .btn-5 {
+    width: 40px !important;
 }

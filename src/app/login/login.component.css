@@ -27,3 +27,9 @@
 .discordButton img {
     width: 50px;
 }
+
+.loginEntry{
+    margin: auto;
+    margin-top: 40px;
+    width: fit-content;
+}

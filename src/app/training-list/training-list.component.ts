@@ -54,7 +54,7 @@ export class TrainingListComponent implements OnInit {
       () => {
         console.log("get all trainings service completed")
         this.isLoading = false;
-        this.trainings.sort((a,b) => a.date < b.date ? -1 : 1)
+        this.trainings.sort((a,b) => a.date < b.date ? 1 : -1)
       }
     );
     this.filteredProgramTypesValues = this.programType.valueChanges
