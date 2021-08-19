@@ -11,7 +11,7 @@
                 <table>
                     <tr *ngFor="let training of trainings; let i=index" [class.selected]="training === selectedTraining" tabindex="0">
                         <td (click)="onSelect(training)">{{training.title}}:</td>
-                        <td (click)="onSelect(training)">{{training.date}}:</td>
+                        <td (click)="onSelect(training)">{{training.date | date}}</td>
                         <td>
                             <app-anim-button *ngIf="deleteConfirm != i" [btnId]="5" class="desktop" title="Delete" (click)="showConfirmation(i)"></app-anim-button>
                             <app-anim-button class="confirm" *ngIf="deleteConfirm == i" [btnId]="3" class="desktop" title="✅" (click)="deleteTraining(training)"></app-anim-button>
@@ -57,7 +57,7 @@
                 <app-bordered-title id="trainingCreationTitle" title="Details"></app-bordered-title>
                 <div>
                     <div class="trainingDetailsEntry">{{selectedTraining.title}}</div>
-                    <div class="trainingDetailsEntry">{{selectedTraining.date}}</div>
+                    <div class="trainingDetailsEntry">{{selectedTraining.date | date:"medium"}}</div>
                     <div class="trainingDetailsEntry">{{selectedProgram.type}}</div>
                     <div class="trainingDetailsEntry"><span class="title">Program repetitions:</span> {{selectedProgram.repetition}}</div>
                     <div><h2>Exercises :</h2></div>
