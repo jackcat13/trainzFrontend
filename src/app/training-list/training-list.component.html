@@ -58,20 +58,20 @@
                 <div>
                     <div class="trainingDetailsEntry">{{selectedTraining.title}}</div>
                     <div class="trainingDetailsEntry">{{selectedTraining.date | date:"medium"}}</div>
-                    <div class="trainingDetailsEntry">{{selectedProgram.type}}</div>
-                    <div class="trainingDetailsEntry"><span class="title">Program repetitions:</span> {{selectedProgram.repetition}}</div>
+                    <div class="trainingDetailsEntry">{{selectedProgram.type+"" | lowercase | titlecase}}</div>
+                    <div class="trainingDetailsEntry">Program repetitions: {{selectedProgram.repetition}}</div>
                     <div><h2>Exercises :</h2></div>
                     <div *ngFor="let exercise of selectedExercises; let i=index">
                         <h3>Exercise {{i+1}}</h3>
-                        <div class="trainingDetailsEntry">{{exercise.title}}</div>
-                        <div *ngIf="exercise.variation" class="trainingDetailsEntry"><span class="title">Variation :</span> {{exercise.variation}}</div>
-                        <div class="trainingDetailsEntry"><span class="title">Series :</span> {{exercise.series}}</div>
-                        <div class="trainingDetailsEntry"><span class="title">Repetitions :</span> {{exercise.repetitions}}</div>
-                        <div class="trainingDetailsEntry"><span class="title">Mass :</span> {{exercise.mass}}</div>
-                        <div class="trainingDetailsEntry"><span class="title">Rest time :</span> {{exercise.restTime}}</div>
-                        <div *ngIf="exercise.additionalInformation" class="trainingDetailsEntry"><span class="title">Additional information :</span> {{exercise.additionalInformation}}</div>
-                        <div class="trainingDetailsEntry"><span class="title">Result confidence :</span> {{exercise.resultConfidence}}</div>
-                        <div *ngIf="exercise.resultComments" class="trainingDetailsEntry"><span class="title">Result comments :</span> {{exercise.resultComments}}</div>
+                        <div class="trainingDetailsEntry">{{exercise.title+"" | lowercase | titlecase}}</div>
+                        <div *ngIf="exercise.variation" class="trainingDetailsEntry">Variation : {{exercise.variation+"" | lowercase | titlecase}}</div>
+                        <div class="trainingDetailsEntry">Series : {{exercise.series}}</div>
+                        <div class="trainingDetailsEntry">Repetitions : {{exercise.repetitions}}</div>
+                        <div class="trainingDetailsEntry">Mass : {{exercise.mass}}</div>
+                        <div class="trainingDetailsEntry">Rest time : {{exercise.restTime}}</div>
+                        <div *ngIf="exercise.additionalInformation" class="trainingDetailsEntry">Additional information : {{exercise.additionalInformation}}</div>
+                        <div class="trainingDetailsEntry">Result confidence : {{exercise.resultConfidence + "" | lowercase | titlecase}}</div>
+                        <div *ngIf="exercise.resultComments" class="trainingDetailsEntry">Result comments : {{exercise.resultComments}}</div>
                     </div>
                 </div>
             </div>

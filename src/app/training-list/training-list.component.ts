@@ -116,4 +116,3 @@ export class TrainingListComponent implements OnInit {
     this.trainings.splice(removeIndex, 1);
   }
 }
-
