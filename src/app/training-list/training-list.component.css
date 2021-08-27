@@ -8,7 +8,9 @@
     .trainingBlock:nth-child(odd){
         height: 70%;
     }
+}
 
+@media screen and (max-width: 820px) {
     #refresh{
         display: none;
     }
@@ -28,11 +30,12 @@
 
     .trainingBlock:nth-child(even){
         background-color: #dddddd;
+        color: #2b3668;
     }
 
     .trainingBlock:nth-child(odd){
-        background-color: #181818;
-        color: rgb(255, 166, 0);
+        background-color: #1f1f1fea;
+        color: #ff9100;
     }
 
     #refresh{
@@ -43,10 +46,6 @@
 }
 
 @media screen and (min-width: 930px) {
-    .createTrainingEntry, .trainingDetailsEntry {
-        margin-left: 20px;
-    }
-
     .trainings table {
         padding: 10px;
     }
@@ -54,6 +53,14 @@
     .trainings table td {
         padding: 10px;
     }
+}
+
+#trainingsListTable{
+    font-size: 20px !important;
+}
+
+#trainingsListTable td:last-child{
+    width: 100px;
 }
 
 .trainingBlock{
@@ -65,10 +72,6 @@
     min-height: 200px;
 }
 
-.createTrainingEntry, .trainingDetailsEntry {
-    margin-bottom: 10px;
-}
-
 #trainingCreationTitle.borderedTopRight, #trainingCreationTitle.borderedBotLeft{
     border-color: black;
 }
@@ -77,6 +80,25 @@ table .btn-5 {
     width: 40px !important;
 }
 
-.trainingDetailsEntry{
-    margin-bottom: 20px;
+#deleteTraining{
+    position: relative;
+    top: 15px;
+}
+
+.deleteTd > div{
+    display: inline-block !important;
+}
+
+.deleteTd > div:last-child{
+    margin-left: 45px;
+}
+
+#deleteTraining{
+    color: #ee8700;
+}
+
+#createButton{
+    position: relative;
+    top: 20px;
+    left: 20px;
 }

@@ -1,12 +1,12 @@
 
 <div class="createExerciseForm">
-    <h3>Exercise {{entryId}}</h3>
+    <h2>Exercise {{entryId}}</h2>
     <div class="createExeciseEntry">
         <mat-form-field>
             <input class="exerciseTitle" placeholder="Exercise title" aria-label="Exercise title" matInput [formControl]="exerciseTitle" [matAutocomplete]="titleAuto" required>
         </mat-form-field>
         <mat-autocomplete #titleAuto="matAutocomplete">
-            <mat-option *ngFor="let title of filteredexerciceTitleValues | async" [value]="title">{{title}}</mat-option>
+            <mat-option *ngFor="let title of filteredexerciceTitleValues | async" [value]="title">{{title | titlecase}}</mat-option>
         </mat-autocomplete>
     </div>
     <div class="createExeciseEntry">
@@ -14,7 +14,7 @@
             <input class="exerciseVariation" placeholder="Exercise variation" aria-label="Exercise Variation" matInput [formControl]="exerciseVariation" [matAutocomplete]="variationAuto">
         </mat-form-field>
         <mat-autocomplete #variationAuto="matAutocomplete">
-            <mat-option *ngFor="let variation of filteredexerciceVariationValues | async" [value]="variation">{{variation}}</mat-option>
+            <mat-option *ngFor="let variation of filteredexerciceVariationValues | async" [value]="variation">{{variation | titlecase}}</mat-option>
         </mat-autocomplete>
     </div>
     <div class="createExeciseEntry">
@@ -47,7 +47,7 @@
             <input class="exerciseResultConfidence" placeholder="Exercise result confidence" aria-label="Exercise result confidence" matInput [formControl]="exerciseResultConfidence" [matAutocomplete]="confidenceAuto" required>
         </mat-form-field>
         <mat-autocomplete #confidenceAuto="matAutocomplete">
-            <mat-option *ngFor="let confidence of filteredexerciceResultConfidenceValues | async" [value]="confidence">{{confidence}}</mat-option>
+            <mat-option *ngFor="let confidence of filteredexerciceResultConfidenceValues | async" [value]="confidence">{{confidence | titlecase}}</mat-option>
         </mat-autocomplete>
     </div>
     <div class="createExeciseEntry">

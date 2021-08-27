@@ -1,0 +1,5 @@
+<div (mouseover)="hover=true" (mouseleave)="hover=false" class="bordered">
+    <div id="borderedBotLeft" [ngStyle]="{'background-color': hover==true ? backgroundColor : 'initial', 'border-color': backgroundColor }"></div>
+    <div id="borderedTopRight" [ngStyle]="{'border-color': backgroundColor}"></div>
+    <div id="title" [ngStyle]="{'color': hover==true ? color : 'inherit' }">{{title}}</div>
+</div>

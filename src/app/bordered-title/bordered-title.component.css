@@ -1,29 +1,19 @@
-@media screen and (max-width: 650px) {
-    h1{
-        font-size: 30px !important;
-    }
-}
-
-@media screen and (min-width: 650px) {
-    h1{
-        font-size: 50px !important;
-    }
-}
-
-h1{
+h1 {
+    font-size: 30px !important;
     margin-bottom: 60px !important;
     letter-spacing: 5px !important;
     text-transform: uppercase;
 }
 
-.bordered{
+.bordered {
     position: relative;
     width: fit-content;
     padding-left: 20px;
     padding-right: 20px;
+    color: inherit;
 }
 
-#borderedBotLeft{
+#borderedBotLeft {
     position: absolute;
     top: 35px;
     bottom: -30px;
@@ -32,9 +22,10 @@ h1{
     border-left: solid 2px rgb(214, 152, 16);
     border-bottom: solid 2px rgb(214, 152, 16);
     border-color: inherit;
+    transition: all 0.25s ease-in-out;
 }
 
-#borderedTopRight{
+#borderedTopRight {
     position: absolute;
     top: -30px;
     bottom: 35px;
@@ -43,4 +34,5 @@ h1{
     border-right: solid 2px rgb(214, 152, 16);
     border-top: solid 2px rgb(214, 152, 16);
     border-color: inherit;
+    transition: all 0.25s ease-in-out;
 }

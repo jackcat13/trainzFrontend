@@ -88,6 +88,7 @@ export class TrainingListComponent implements OnInit {
     this.service.createTraining(training).subscribe(
       training => {
         this.trainings.push(training);
+        this.isLoading = true;
         location.reload();
       },
       err => console.error(err),
@@ -99,7 +100,7 @@ export class TrainingListComponent implements OnInit {
     this.deleteConfirm = i;
   }
 
-  hideConfirmation(i: number): void{
+  hideConfirmation(): void{
     this.deleteConfirm = undefined;
   }
 
@@ -109,6 +110,7 @@ export class TrainingListComponent implements OnInit {
       err => console.error(err),
       () => console.log("delete training service completed")
     );
+    this.hideConfirmation();
   }
 
   private removeTrainingFromList(trainingId: string): void {

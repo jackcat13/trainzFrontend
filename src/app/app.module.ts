@@ -18,6 +18,8 @@ import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.componen
 import { RefreshButtonComponent } from './refresh-button/refresh-button.component';
 import { BorderedTitleComponent } from './bordered-title/bordered-title.component';
 import { AnimButtonComponent } from './anim-button/anim-button.component';
+import { BorderedButtonComponent } from './bordered-button/bordered-button.component';
+import { BorderedDivComponent } from './bordered-div/bordered-div.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AnimButtonComponent } from './anim-button/anim-button.component';
     ExerciseEntryComponent,
     RefreshButtonComponent,
     BorderedTitleComponent,
-    AnimButtonComponent
+    AnimButtonComponent,
+    BorderedButtonComponent,
+    BorderedDivComponent
   ],
   imports: [
     BrowserModule,

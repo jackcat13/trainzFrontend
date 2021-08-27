@@ -17,28 +17,23 @@ body {
     font-family: "nexa_lightregular" !important;
     text-align: justify;
     line-height: 1.6 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #2b3668d0;
+    text-rendering: geometricPrecision;
 }
 
 table{
     text-align: left;
     width: 100%;
-}
-
-@media screen and (max-width: 650px) {
-    body{
-        font-size: 18px !important;
-    }
+    padding: 20px;
+    border-radius: 10px 0 10px 0;
+    color: #98b0db;
 }
 
 @media screen and (max-width: 930px) {
     .desktop{
         display: none;
-    }
-}
-
-@media screen and (min-width: 650px) {
-    body{
-        font-size: 22px !important;
     }
 }
 
@@ -84,11 +79,12 @@ tr{
 }
 
 tr:hover{
-    color: #702c2c;
+    color: #ff9100;
+    cursor: pointer;
 }
 
-tr:focus{
-    color: red;
+tr:active{
+    opacity: 0.5;
 }
 
 td{
@@ -109,6 +105,15 @@ h1, h2, h3{
 
 h2, h3{
     margin-top: 20px !important;
+    letter-spacing: 1px !important;
+}
+
+h2{
+    color: #be6c01;
+}
+
+h3{
+    color: #d39716;
 }
 
 .title{
