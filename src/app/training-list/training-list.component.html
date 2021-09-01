@@ -6,16 +6,25 @@
 <div class="largeWrapper" [ngStyle]="{'opacity': isLoading == true ? '0.5' : '' }">
     <div id="trainingsForm">
         <div class="trainingBlock">
-            <app-bordered-title title="Trainings"></app-bordered-title>
+            <lib-bordered-title title="Trainings"></lib-bordered-title>
             <div id="trainingsListTable">
                 <table>
                     <tr *ngFor="let training of trainings; let i=index" [class.selected]="training === selectedTraining" tabindex="0">
                         <td (click)="onSelect(training)">{{training.title}}:</td>
                         <td class="dateCell" (click)="onSelect(training)">{{training.date | date}}</td>
                         <td class="desktop deleteTd">
-                            <div><app-bordered-button id="deleteTraining" *ngIf="deleteConfirm != i" class="desktop" title="Delete" backgroundColor="#ee8700" color="white" (click)="showConfirmation(i)"></app-bordered-button></div>
-                            <div><app-bordered-button *ngIf="deleteConfirm == i" class="confirm desktop" title="✅" style="color: green" (click)="deleteTraining(training)"></app-bordered-button></div>
-                            <div><app-bordered-button *ngIf="deleteConfirm == i" class="confirm desktop" title="❌" style="color: red" (click)="hideConfirmation()"></app-bordered-button></div>
+                            <div>
+                                <lib-bordered-button id="deleteTraining" *ngIf="deleteConfirm != i" class="desktop" title="Delete" backgroundColor="#ee8700" color="white" (click)="showConfirmation(i)">
+                                </lib-bordered-button>
+                            </div>
+                            <div>
+                                <lib-bordered-button *ngIf="deleteConfirm == i" class="confirm desktop" title="✅" style="color: green" (click)="deleteTraining(training)">
+                                </lib-bordered-button>
+                            </div>
+                            <div>
+                                <lib-bordered-button *ngIf="deleteConfirm == i" class="confirm desktop" title="❌" style="color: red" (click)="hideConfirmation()">
+                                </lib-bordered-button>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -23,7 +32,7 @@
         </div>
         <div class="trainingBlock">
             <div *ngIf="!selectedTraining" id="createTrainingForm">
-                <app-bordered-title id="trainingCreationTitle" title="Creation"></app-bordered-title>
+                <lib-bordered-title id="trainingCreationTitle" title="Creation"></lib-bordered-title>
                 <h2>Program</h2>
                 <div class="createTrainingEntry">
                     <mat-form-field><input id="trainingTitle" placeholder="Training title" aria-label="Training title" matInput type="text" [formControl]="trainingTitle" required></mat-form-field>
@@ -52,31 +61,32 @@
                 <div class="createTrainingEntry" *ngFor="let index of observedExercisesNumber | async; let i=index">
                     <app-exercise-entry [entryId]="i+1" #exercise></app-exercise-entry>
                 </div>
-                <app-bordered-button id="createButton" title="Create" backgroundColor="#2b2468" color="white" (click)="createTraining()"></app-bordered-button>
+                <lib-bordered-button id="createButton" title="Create" backgroundColor="#2b2468" color="white" (click)="createTraining()">
+                </lib-bordered-button>
             </div>
             <div *ngIf="selectedTraining" id="trainingDetails">
-                <app-bordered-title id="trainingCreationTitle" title="Details"></app-bordered-title>
+                <lib-bordered-title id="trainingCreationTitle" title="Details"></lib-bordered-title>
                 <div>
                     <h2>Program</h2>
-                    <app-bordered-div>
+                    <lib-bordered-div>
                         <div class="trainingDetailsEntry firstEntry">{{selectedTraining.title}}</div>
                         <div class="trainingDetailsEntry">{{selectedTraining.date | date:"medium"}}</div>
                         <div class="trainingDetailsEntry">{{selectedProgram.type+"" | titlecase}}</div>
                         <div class="trainingDetailsEntry">Program repetitions: {{selectedProgram.repetition}}</div>
-                    </app-bordered-div>
+                    </lib-bordered-div>
                     <div *ngFor="let exercise of selectedExercises; let i=index">
                         <h2>Exercise {{i+1}}</h2>
-                            <app-bordered-div>
-                                <div class="trainingDetailsEntry firstEntry">{{exercise.title+"" | titlecase}}</div>
-                                <div *ngIf="exercise.variation" class="trainingDetailsEntry">Variation : {{exercise.variation+"" | titlecase}}</div>
-                                <div class="trainingDetailsEntry">Series : {{exercise.series}}</div>
-                                <div class="trainingDetailsEntry">Repetitions : {{exercise.repetitions}}</div>
-                                <div class="trainingDetailsEntry">Mass : {{exercise.mass}}</div>
-                                <div class="trainingDetailsEntry">Rest time : {{exercise.restTime}}</div>
-                                <div *ngIf="exercise.additionalInformation" class="trainingDetailsEntry">Additional information : {{exercise.additionalInformation}}</div>
-                                <div class="trainingDetailsEntry">Result confidence : {{exercise.resultConfidence + "" | titlecase}}</div>
-                                <div *ngIf="exercise.resultComments" class="trainingDetailsEntry">Result comments : {{exercise.resultComments}}</div>
-                            </app-bordered-div>
+                        <lib-bordered-div>
+                            <div class="trainingDetailsEntry firstEntry">{{exercise.title+"" | titlecase}}</div>
+                            <div *ngIf="exercise.variation" class="trainingDetailsEntry">Variation : {{exercise.variation+"" | titlecase}}</div>
+                            <div class="trainingDetailsEntry">Series : {{exercise.series}}</div>
+                            <div class="trainingDetailsEntry">Repetitions : {{exercise.repetitions}}</div>
+                            <div class="trainingDetailsEntry">Mass : {{exercise.mass}}</div>
+                            <div class="trainingDetailsEntry">Rest time : {{exercise.restTime}}</div>
+                            <div *ngIf="exercise.additionalInformation" class="trainingDetailsEntry">Additional information : {{exercise.additionalInformation}}</div>
+                            <div class="trainingDetailsEntry">Result confidence : {{exercise.resultConfidence + "" | titlecase}}</div>
+                            <div *ngIf="exercise.resultComments" class="trainingDetailsEntry">Result comments : {{exercise.resultComments}}</div>
+                        </lib-bordered-div>
                     </div>
                 </div>
             </div>

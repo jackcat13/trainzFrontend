@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrainingListComponent } from './training-list/training-list.component';
@@ -16,10 +15,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { ExerciseEntryComponent } from './exercise-entry/exercise-entry.component';
 import { RefreshButtonComponent } from './refresh-button/refresh-button.component';
-import { BorderedTitleComponent } from './bordered-title/bordered-title.component';
 import { AnimButtonComponent } from './anim-button/anim-button.component';
-import { BorderedButtonComponent } from './bordered-button/bordered-button.component';
-import { BorderedDivComponent } from './bordered-div/bordered-div.component';
+import { BorderedTitleModule } from 'jackcat13-ng-bordered-title';
+import { BorderedDivModule } from 'jackcat13-ng-bordered-div';
+import { BorderedButtonModule } from 'jackcat13-ng-bordered-button';
 
 @NgModule({
   declarations: [
@@ -30,10 +29,7 @@ import { BorderedDivComponent } from './bordered-div/bordered-div.component';
     SpinnerComponent,
     ExerciseEntryComponent,
     RefreshButtonComponent,
-    BorderedTitleComponent,
-    AnimButtonComponent,
-    BorderedButtonComponent,
-    BorderedDivComponent
+    AnimButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +40,10 @@ import { BorderedDivComponent } from './bordered-div/bordered-div.component';
     MatSelectModule,
     MatInputModule,
     MatAutocompleteModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BorderedTitleModule,
+    BorderedDivModule,
+    BorderedButtonModule
   ],
   providers: [DiscordLoginService],
   bootstrap: [AppComponent]
